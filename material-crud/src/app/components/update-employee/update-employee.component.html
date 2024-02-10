@@ -1,0 +1,51 @@
+
+<br>
+
+<div class="container">
+  <button mat-raised-button color="accent" routerLink="" class="float-end "><mat-icon>list</mat-icon>Employee List</button>
+<br><br><br>
+    <div class="card p-4 ">
+        <h1 class="text-center">Update Employee</h1>
+       <form (ngSubmit)="onUpdate()" >
+            <mat-form-field appearance="outline">
+              <mat-label>Employee Name</mat-label>
+              <input matInput placeholder="Enter name" [(ngModel)]="employee.employeeName" name="name">
+              <mat-icon matSuffix>person</mat-icon>
+             
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+              <mat-label>Employee Contact Number</mat-label>
+              <input matInput placeholder="Enter contact nummber"
+              [(ngModel)]="employee.contactNumber" name="contactNumber">
+              <mat-icon matSuffix>call</mat-icon>
+             
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+              <mat-label>Employee Address</mat-label>
+              <input matInput placeholder="Enter Address" [(ngModel)]="employee.address" name="address">
+              <mat-icon matSuffix>apartment</mat-icon>
+             
+            </mat-form-field>
+
+          
+    
+         <mat-divider></mat-divider>
+
+         <div class="text-center mt-2">
+          <section>
+           
+            <div class="example-button-row">
+             
+              <button mat-raised-button color="warn" class="m-2" type="reset" >Cancel<mat-icon>cancel</mat-icon></button>
+              <button mat-raised-button color="primary" value="Submit" class="m-2">Update <mat-icon>check circle</mat-icon> </button>
+            
+              
+             
+            </div>
+          </section>
+         </div>
+        </form>
+    </div>
+</div>
