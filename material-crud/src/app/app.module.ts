@@ -26,6 +26,9 @@ import { EmployeeListComponent } from './components/employee-list/employee-list.
 import { HttpClientModule } from '@angular/common/http';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { UpdateEmployeeComponent } from './components/update-employee/update-employee.component'
+import { MatPaginatorModule} from '@angular/material/paginator';
+
+import{ToastrModule} from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -35,7 +38,8 @@ import { UpdateEmployeeComponent } from './components/update-employee/update-emp
     EmployeeComponent,
     AddEmployeeComponent,
     EmployeeListComponent,
-    UpdateEmployeeComponent
+    UpdateEmployeeComponent,
+   
   ],
   imports: [
     BrowserModule,
@@ -56,7 +60,9 @@ import { UpdateEmployeeComponent } from './components/update-employee/update-emp
     MatDividerModule,
     MatSnackBarModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatPaginatorModule,
+    ToastrModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

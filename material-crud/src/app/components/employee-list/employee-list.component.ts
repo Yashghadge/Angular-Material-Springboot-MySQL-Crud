@@ -1,6 +1,7 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';;
+import { Router } from '@angular/router';import { ToastrService } from 'ngx-toastr';
+;
 import { Employee } from 'src/app/models/employee.model';
 import { EmployeeService } from 'src/app/services/employee.service';
 
@@ -17,7 +18,7 @@ export class EmployeeListComponent implements OnInit {
 ];
  
 
-constructor(private employeeService:EmployeeService,private router:Router){}
+constructor(private employeeService:EmployeeService,private router:Router,private toaster:ToastrService){}
 
 
 
@@ -42,7 +43,7 @@ constructor(private employeeService:EmployeeService,private router:Router){}
     this.employeeService.deleteEmployee(id).subscribe({
       next:(res)=>{
         console.log(res);
-        alert("employee with id "+id+" deleted successfully");
+        this.toaster.success("employee with id "+id+" deleted successfully");
         this.getEmployeeList();
 
       },
